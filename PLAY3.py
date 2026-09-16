@@ -1,3 +1,6 @@
+import sys
+sys.stdout.reconfigure(line_buffering=True)
+
 import time, os, psutil, random, gc
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -7,16 +10,16 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.firefox import GeckoDriverManager
 
 LINKS = [
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14099640Psd5ckztbxxpsp3mr80g&balance=0&currency=PEN&userid=14050994&isMobile=false",
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14099703Ptvek8xix3bv72oyabvu&balance=0&currency=PEN&userid=14051057&isMobile=false",
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14099777Pf29hvqzft6wzapuiqwc&balance=0&currency=PEN&userid=14051130&isMobile=false",
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14099906P6ochlhra28j8sisenry&balance=0&currency=PEN&userid=14051258&isMobile=false",
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14099976P7vs7rigibl8ssrlhtgy&balance=0&currency=PEN&userid=14051328&isMobile=false",
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14100055P9pwbojk1rly70mkpwm2&balance=0&currency=PEN&userid=14051407&isMobile=false",
-    "https://casino.virtualsoft.tech/game/play/?gameid=70514&mode=real&provider=undefined&lan=es&partnerid=0&token=0P14100116Pz4oorga6cd91qz8oxuc&balance=0&currency=PEN&userid=14051468&isMobile=false"
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12792565Pf1z4zunkihz1fex0dzl&balance=0&currency=USD&userid=12735067&isMobile=false",
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12924766Pi54oeefwu8v0qnqt7yf&balance=0&currency=USD&userid=12868380&isMobile=false",
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12924774Pxe6029gb4zr6kzy5oqv&balance=0&currency=USD&userid=12868388&isMobile=false",
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12924780Pd3lcf373qaebmw9erdm&balance=0&currency=USD&userid=12868394&isMobile=false",
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12924786P2llqjl1cfr9jxcscjrv&balance=0&currency=USD&userid=12868400&isMobile=false",
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12924789Pesopbm0hbqxevb10pqo&balance=0&currency=USD&userid=12868403&isMobile=false",
+    "https://casino.virtualsoft.tech/game/play/?gameid=203831&mode=real&provider=SPRIBE&lan=es&partnerid=8&token=0P12924795Pupmy6wemqgcf3kymrac&balance=0&currency=USD&userid=12868409&isMobile=false"
 ]
 
-PLANTILLA_BASE = "Quieres ganar Mas de 2mil en 45 minutos Escribeme al Whatsapp😍⚓+𝟓𝟐 𝟕𝟕𝟑𝟐𝟔𝟕𝟑𝟓𝟓𝟓 ⚓𝚝elegram⚓ 𝙰𝚅𝙸𝙰𝚃𝙾𝚁𝙿𝙺𝙰 sin cobros adelantados⚓⛺⚓⛳⚓😘VAR_3"
+PLANTILLA_BASE = "Quieres Ganar Mas de 2 mil en 45 minutoｓ Escribeme al Whatsapp⚡ ✅𝐎𝟗𝟔𝟖𝟖𝟑𝟐𝟑𝟎𝟎✅⚓𝚃𝙴L𝙴𝙶𝚁AM😚✅𝙰𝚅𝙸𝙰𝚃𝙾𝚁𝙿𝙺𝙰✅Sin 𝙿agos adelantadoss⚓⚡⛳⛺➕➗VAR_3"
 EMOJIS_POOL = list("😎😷😋😍😘😝😉😙🤓🔥💧👸😏🤑🤗👊✊👍💥👌👈👇👆👉👅👄🤘🙆💆💙💜💛💚👑🎩🙋💃🐽💗💌🤖🐺🐶💎🐦🐤🐥🐞🦄🐠🦀🦁🐼🐴🐒🐵➗🌹🌻🍄💐🌵🐩💵🎁💰")
 
 historial_enviados = set()
@@ -80,7 +83,7 @@ def buscar_campo_texto(dr):
     return None
 
 def abrir_y_verificar_tags_todos(dr):
-    print("⏳ [PLAY1 - HEADLESS] Abriendo y preparando todos los chats en segundo plano...", flush=True)
+    print("⏳ [LITHIUMS3 - HEADLESS] Abriendo y preparando todos los chats en segundo plano...")
     handles = []
     for i, url in enumerate(LINKS):
         if i == 0:
@@ -148,7 +151,7 @@ def run():
         
         proximo_disparo_por_tag = {i: 0.0 for i in range(num_tags)}
         
-        print(f"\n🚀 [PLAY1 ACTIONS] INICIANDO RACHAS INTELIGENTES ({num_tags} chats activos)...", flush=True)
+        print(f"\n🚀 [LITHIUMS3 ACTIONS] INICIANDO RACHAS INTELIGENTES ({num_tags} chats activos)...")
         
         while total_disparos_global < MAX_DISPAROS_CICLO:
             ahora = time.time()
@@ -164,24 +167,24 @@ def run():
                     if disparar_con_protocolo_seguro(dr, handles[idx], idx, msg):
                         total_disparos_global += 1
                         disparo_realizado_en_iteracion = True
-                        print(f"    ⚡ [PLAY1] Chat #{idx+1} enviado | Total ciclo: {total_disparos_global}/{MAX_DISPAROS_CICLO}", flush=True)
+                        print(f"    ⚡ [LITHIUMS3] Chat #{idx+1} enviado | Total ciclo: {total_disparos_global}/{MAX_DISPAROS_CICLO}")
                         
                         proximo_disparo_por_tag[idx] = time.time() + 5.0
             
             if not disparo_realizado_en_iteracion:
                 time.sleep(0.1)
         
-        print(f"\n🎯 [PLAY1] META DE {MAX_DISPAROS_CICLO} ALCANZADA.", flush=True)
+        print(f"\n🎯 [LITHIUMS3] META DE {MAX_DISPAROS_CICLO} ALCANZADA.")
         
     except Exception as e:
-        print(f"⚠️ [PLAY1] Error en ejecución: {e}", flush=True)
+        print(f"⚠️ [LITHIUMS3] Error en ejecución: {e}")
     finally:
         try: dr.quit()
         except: pass
         limpiar_especifico(pid)
         historial_enviados.clear()
         gc.collect()
-        print("🔄 [PLAY1] Ciclo finalizado correctamente en GitHub Actions.\n", flush=True)
+        print("🔄 [LITHIUMS3] Ciclo finalizado correctamente en GitHub Actions.\n")
 
 if __name__ == "__main__": 
     run()
